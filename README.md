@@ -83,3 +83,5 @@ elif take <= 0 :
 Alice, how many sticks you will take (1 or 2)? : -1<br />
 No, you cannot take less than 1 stick!<br />
 
+## _Changes Summary_
+Showing 1 changed file with 43 additions and 31 deletions.
