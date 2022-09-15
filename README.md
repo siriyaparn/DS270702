@@ -1,4 +1,4 @@
-# DS270702-SticksInThePipe
+# Sticks In The Pipe Game
 ## _The Pipe Game is the game that allows you to play with Python._
 The Rule : The player that takes the last stick will lose.
 - You play as the Player1
