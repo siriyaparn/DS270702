@@ -1,3 +1,5 @@
+import random
+
 stick = int(input("How many sticks (N) in the pile : "))      # input the number of stick to the game
 
 while stick < 0 :                                             # check the number of stick [should be more than 1 stick]
@@ -38,7 +40,7 @@ while stick >= 0 :                                            # check the number
       #print(stick)
       
   else :                                                      # computer turn  
-    if (stick%3 == 0) or (stick%3 == 2) and (stick != 2) and (stick != 5):      # the condition that computer will take 2 sticks
+    if stick%3 == 0 :                                         # the condition that computer will take 2 sticks
       take = 2
       print("I, smart computer, takes : ", take)
       ans = stick - take                                      # to check last stick
@@ -46,8 +48,24 @@ while stick >= 0 :                                            # check the number
       count += 1
       print("There are ", ans, "sticks in the pile.")
       #print(stick)
-    elif stick%3 == 1 or stick == 2 or stick == 5:                              # the condition that computer will take only 1 stick
+    elif stick%3 == 2 :                                   # the condition that computer will take only 1 stick
       take = 1
+      print("I, smart computer, takes : ", take)
+      ans = stick - take                                    # to check last stick    
+      stick = stick - take                                  # assign new value to stick
+      #print(stick)
+      count += 1
+      if ans == 0 :                                         # computer takes last stick, player win! and break to finish
+        print("I, smart computer, takes the last stick.")       
+        print(name , end="")
+        print(" wins (I, smart computer, am sad T_T)")
+        #print(stick)
+        break 
+      else :
+        print("There are ", ans, "sticks in the pile.")
+        #print(stick)
+    else :                                                  # other conditions, computer takes random stick 1 or 2
+      take = random.randint(1,2)                            # take = random number 1 or 2
       print("I, smart computer, takes : ", take)
       ans = stick - take                                    # to check last stick    
       stick = stick - take                                  # assign new value to stick
