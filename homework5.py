@@ -7,29 +7,30 @@ Original file is located at
     https://colab.research.google.com/drive/1Nu72vocnofKcpXLEQKppkalshZWNgdXA
 """
 
-n = int(input('How many numbers do you want to input : '))
+n = int(input('How many numbers do you want to input : '))  #input the number of interger
 number = []
 
 for a in range (0, n):
-  a = int(input('Please input number : '))
-  if a > 0 :
-    number.append(a)
+  a = int(input('Please input number : '))    
+  if a > 0 :                                  #check positive interger
+    number.append(a)                          #append a to the list
     #print(a)
     #print(number)
-  while a < 0 :
-    print("Cannot put minus interger. please input positive integer.")
+  while a < 0 :                               #check minus interger
+    print("Cannot put minus interger. please input positive integer.")    
     a = int(input('Please input number : '))
     if a > 0 :
-      number.append(a)
+      number.append(a)                        #append a to the list
 print('The numbers that you want to form the largest number are', number)
 
 for i in range(len(number)):
-  number[i] = str(number[i])
+  number[i] = str(number[i])                  #convert number to string
 
+#check the largest interger by index
 for i in range(len(number)):
   for j in range(1+i,len(number)):
-    if number[j] + number[i] > number[i] + number[j]:
-      number[i],number[j]=number[j],number[i]
+    if number[j] + number[i] > number[i] + number[j]:  #if the interger in index [1] + index [0] > index [0] + index [1]
+      number[i],number[j]=number[j],number[i]          #swap index
 
 result = ''.join(number)
 print('The largest formed number is', result)
